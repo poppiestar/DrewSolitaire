@@ -1,0 +1,3 @@
+rootProject.name = 'DrewSolitaire'
+
+include ':app'
