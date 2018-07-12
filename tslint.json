@@ -4,6 +4,9 @@
         "tslint:recommended"
     ],
     "jsRules": {},
-    "rules": {},
+    "rules": {
+        "trailing-comma": false,
+        "indent": [true, "spaces", 4]
+    },
     "rulesDirectory": []
 }
