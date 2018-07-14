@@ -1,5 +1,6 @@
-import { applyMiddleware, createStore } from "redux";
+import { applyMiddleware, compose, createStore } from "redux";
 import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
+import { composeWithDevTools } from "remote-redux-devtools";
 import reducers, { IAppStore, initialState } from "./reducers";
 
 let middleware: any = [];
@@ -15,8 +16,10 @@ const configureStore = (state: IAppStore = initialState) =>
     createStore(
         reducers,
         state,
-        applyMiddleware(
-            ...middleware
+        compose(
+            applyMiddleware(
+                ...middleware
+            )
         )
     );
 
