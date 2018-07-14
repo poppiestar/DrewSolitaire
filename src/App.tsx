@@ -4,7 +4,7 @@ import { HomeScreen } from "./components/screens";
 import store from "./redux/store";
 
 const App: SFC<{}> = () => (
-    <Provider store={store}>
+    <Provider store={store()}>
         <HomeScreen />
     </Provider>
 );

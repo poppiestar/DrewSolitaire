@@ -1,6 +1,6 @@
 import { SET_VISIBILITY_FILTER } from "./game.actions";
 
-interface IGameStore {
+export interface IGameStore {
     visibilityFilter: string;
 }
 

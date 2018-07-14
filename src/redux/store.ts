@@ -1,6 +1,23 @@
-import { createStore } from "redux";
-import reducers from "./reducers";
+import { applyMiddleware, createStore } from "redux";
+import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
+import reducers, { IAppStore, initialState } from "./reducers";
 
-const store = createStore(reducers);
+let middleware: any = [];
 
-export default store;
+if (__DEV__) {
+    middleware = [
+        ...middleware,
+        reduxImmutableStateInvariant()
+    ];
+}
+
+const configureStore = (state: IAppStore = initialState) =>
+    createStore(
+        reducers,
+        state,
+        applyMiddleware(
+            ...middleware
+        )
+    );
+
+export default configureStore;
