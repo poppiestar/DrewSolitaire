@@ -1,10 +1,12 @@
 import React, { SFC } from "react";
 import { Provider } from "react-redux";
 import { HomeScreen } from "./components/screens";
-import store from "./redux/store";
+import configureStore from "./redux/store";
+
+const store = configureStore();
 
 const App: SFC<{}> = () => (
-    <Provider store={store()}>
+    <Provider store={store}>
         <HomeScreen />
     </Provider>
 );
