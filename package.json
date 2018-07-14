@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "react": "16.4.1",
+    "react-dom": "^16.4.1",
     "react-native": "0.56.0"
   },
   "devDependencies": {
@@ -17,6 +18,8 @@
     "@types/react-test-renderer": "^16.0.1",
     "babel-jest": "23.4.0",
     "babel-preset-react-native": "^5",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.4.1",
     "react-native-typescript-transformer": "^1.2.10",
     "react-test-renderer": "16.4.1",
@@ -26,6 +29,7 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupTestFrameworkScriptFile": "<rootDir>/jest/setup-unit.js",
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
