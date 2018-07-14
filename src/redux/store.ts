@@ -1,22 +1,15 @@
-import { applyMiddleware, compose, createStore } from "redux";
+import { applyMiddleware, compose, createStore, Store } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
-import { composeWithDevTools } from "remote-redux-devtools";
 import reducers, { IAppStore, initialState } from "./reducers";
 
-let middleware: any = [];
+const middleware: any = [reduxImmutableStateInvariant()];
 
-if (__DEV__) {
-    middleware = [
-        ...middleware,
-        reduxImmutableStateInvariant()
-    ];
-}
-
-const configureStore = (state: IAppStore = initialState) =>
+const configureStore = (state: IAppStore = initialState): Store<IAppStore> =>
     createStore(
         reducers,
         state,
-        compose(
+        composeWithDevTools(
             applyMiddleware(
                 ...middleware
             )
