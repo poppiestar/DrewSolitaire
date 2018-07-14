@@ -1,5 +1,5 @@
 import React, { SFC } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { InnerProps as Props } from "./home.container";
 
 const instructions = Platform.select({
@@ -9,12 +9,16 @@ const instructions = Platform.select({
     ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
 });
 
-const HomeScreen: SFC<Props> = ({ visibilityFilter }) => (
+const HomeScreen: SFC<Props> = ({ visibilityFilter, setVisibilityFilter }) => (
     <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.tsx</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Text>Visibility Filter: {visibilityFilter}</Text>
+        <TouchableOpacity
+            onPress={() => setVisibilityFilter("fred")}>
+            <Text>Set to Fred</Text>
+        </TouchableOpacity>
     </View>
 );
 
