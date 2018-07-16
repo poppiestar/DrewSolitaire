@@ -9,6 +9,6 @@ storiesOf("HomeScreen", module)
     .add("default view", () => (
         <HomeScreen
             setVisibilityFilter={action("set-visibility-filter clicked")}
-            visibilityFilter={text("Visibility Filter text", "fred")}
+            visibilityFilter={text("Visibility Filter", "Testing")}
         />
     ));
