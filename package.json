@@ -5,9 +5,12 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
+    "prestorybook": "rnstl",
     "storybook": "storybook start -p 7007"
   },
   "dependencies": {
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-links": "^3.4.8",
     "@storybook/react-native": "^3.4.8",
     "@types/storybook__react-native": "^3.0.0",
     "react": "16.4.1",
@@ -25,12 +28,14 @@
     "@types/react-redux": "^6.0.4",
     "@types/react-test-renderer": "^16.0.1",
     "@types/redux-immutable-state-invariant": "^2.0.4",
+    "@types/storybook__react": "^3.0.8",
     "babel-core": "^7.0.0-beta.47",
     "babel-jest": "23.4.0",
     "babel-preset-react-native": "^5",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.4.1",
+    "react-native-storybook-loader": "^1.8.0",
     "react-native-typescript-transformer": "^1.2.10",
     "react-test-renderer": "16.4.1",
     "redux-devtools-extension": "^2.13.5",
@@ -38,6 +43,15 @@
     "ts-jest": "^23.0.0",
     "tslint": "^5.10.0",
     "typescript": "^2.9.2"
+  },
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": [
+        "./src"
+      ],
+      "pattern": "**/*.stories.tsx",
+      "outputFile": "./storybook/storyLoader.js"
+    }
   },
   "jest": {
     "globals": {
