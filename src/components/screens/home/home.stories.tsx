@@ -1,23 +1,14 @@
+import { action } from "@storybook/addon-actions";
+import { text, withKnobs } from "@storybook/addon-knobs";
 import { storiesOf } from "@storybook/react-native";
-import React, { SFC } from "react";
-import { Text, View, ViewStyle } from "react-native";
+import React from "react";
+import HomeScreen from "./home.screen";
 
-const style = {
-    alignItems: "center",
-    backgroundColor: "#F5FCFF",
-    flex: 1,
-    justifyContent: "center"
-} as ViewStyle;
-
-const CenteredView: SFC<{}> = ({ children }) => (
-    <View style={style}>
-        {children}
-    </View>
-);
-
-storiesOf("CenteredView", module)
+storiesOf("HomeScreen", module)
+    .addDecorator(withKnobs)
     .add("default view", () => (
-        <CenteredView>
-            <Text>Hello Storybook</Text>
-        </CenteredView>
+        <HomeScreen
+            setVisibilityFilter={action("set-visibility-filter clicked")}
+            visibilityFilter={text("Visibility Filter text", "fred")}
+        />
     ));
