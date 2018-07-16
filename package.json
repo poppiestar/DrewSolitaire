@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "storybook start -p 7007"
   },
   "dependencies": {
+    "@storybook/react-native": "^3.4.8",
+    "@types/storybook__react-native": "^3.0.0",
     "react": "16.4.1",
     "react-dom": "^16.4.1",
     "react-native": "0.56.0",
@@ -46,11 +49,11 @@
     "collectCoverage": true,
     "coverageDirectory": "./coverage/",
     "coverageReporters": [
-        "lcov"
+      "lcov"
     ],
     "collectCoverageFrom": [
-        "src/**/*.(ts|tsx)",
-        "!src/**/*.(spec|stories).tsx"
+      "src/**/*.(ts|tsx)",
+      "!src/**/*.(spec|stories).tsx"
     ],
     "setupTestFrameworkScriptFile": "<rootDir>/jest/setup-unit.js",
     "transform": {
