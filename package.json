@@ -16,6 +16,7 @@
     "react": "16.4.1",
     "react-dom": "^16.4.1",
     "react-native": "0.56.0",
+    "react-native-navigation": "^2.0.2418",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0"
   },

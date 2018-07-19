@@ -1,14 +1,24 @@
-import React, { SFC } from "react";
-import { Provider } from "react-redux";
-import { HomeScreen } from "./components/screens";
-import configureStore from "./redux/store";
+import { Platform } from "react-native";
+import { Navigation } from "react-native-navigation";
+import { registerScreens } from "./screens";
 
-const store = configureStore();
+export const start = () => {
+    registerScreens();
 
-const App: SFC<{}> = () => (
-    <Provider store={store}>
-        <HomeScreen />
-    </Provider>
-);
+    Navigation.events().registerAppLaunchedListener(() => {
 
-export default App;
+        Navigation.setRoot({
+            root: {
+                stack: {
+                    children: [{
+                        component: {
+                            name: "navigation.HomeScreen"
+                        },
+                        id: "TEST",
+                    }]
+                }
+            }
+        });
+
+    });
+};

@@ -1,7 +1,7 @@
 import { shallow } from "enzyme";
 import React from "react";
 import "react-native";
-import HomeScreen from "./home.screen";
+import HomeScreen from "../home.screen";
 
 describe("HomeScreen", () => {
 
