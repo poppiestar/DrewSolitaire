@@ -11,9 +11,13 @@ import configureStore from "../redux/store";
 
 const store = configureStore();
 
-const withProvider = (ConnectedComponent: any, connectStore: Store<IAppStore>): any => {
+const withProvider = (
+    ConnectedComponent: React.ComponentClass,
+    connectStore: Store<IAppStore>
+): React.ComponentClass => {
 
     return class extends Component<{}> {
+
         public render() {
             return (
                 <Provider store={connectStore}>
