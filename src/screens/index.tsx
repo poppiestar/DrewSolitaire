@@ -17,7 +17,7 @@ const withProvider = (ConnectedComponent: any, connectStore: Store<IAppStore>): 
         public render() {
             return (
                 <Provider store={connectStore}>
-                    <ConnectedComponent />
+                    <ConnectedComponent {...this.props} />
                 </Provider>
             );
         }
