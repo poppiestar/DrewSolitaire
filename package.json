@@ -12,6 +12,7 @@
     "@storybook/addon-actions": "^3.4.8",
     "@storybook/addon-links": "^3.4.8",
     "@storybook/react-native": "^3.4.8",
+    "card-deck": "^1.0.0",
     "react": "16.4.1",
     "react-dom": "^16.4.1",
     "react-native": "0.56.0",
