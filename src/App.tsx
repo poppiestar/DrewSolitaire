@@ -2,6 +2,7 @@ import { Navigation } from "react-native-navigation";
 import { registerScreens } from "./screens";
 
 export const start = () => {
+
     registerScreens();
 
     Navigation.events().registerAppLaunchedListener(() => {
@@ -13,7 +14,7 @@ export const start = () => {
                         component: {
                             name: "navigation.HomeScreen"
                         },
-                        id: "TEST",
+                        id: "DrewSolitaire",
                     }]
                 }
             }
