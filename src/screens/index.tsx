@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { ComponentProvider } from "react-native";
 import { Navigation } from "react-native-navigation";
 import { Provider } from "react-redux";
 import { Store } from "redux";
@@ -13,6 +12,7 @@ import configureStore from "../redux/store";
 const store = configureStore();
 
 const withProvider = (ConnectedComponent: any, connectStore: Store<IAppStore>): any => {
+
     return class extends Component<{}> {
         public render() {
             return (

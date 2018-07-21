@@ -9,15 +9,14 @@ const instructions = Platform.select({
     ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
 });
 
-const HomeScreen: SFC<Props> = ({ visibilityFilter, setVisibilityFilter }) => (
+const HomeScreen: SFC<Props> = ({ onButtonPress }) => (
     <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.tsx</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <Text>Visibility Filter: {visibilityFilter}</Text>
         <TouchableOpacity
-            onPress={() => setVisibilityFilter("fred")}>
-            <Text>Set to Fred</Text>
+            onPress={onButtonPress}>
+            <Text>Start Pyramid Game</Text>
         </TouchableOpacity>
     </View>
 );
