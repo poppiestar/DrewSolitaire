@@ -1,4 +1,5 @@
-import { Deck } from "../../../lib";
+import Deck from "card-deck";
+import GameDeck from "../../../lib/deck/game-deck";
 import {
     NEW_GAME_PYRAMID,
     RESTART_GAME_PYRAMID,
@@ -20,9 +21,11 @@ export const initialState: IPyramidStore = {
 };
 
 const pyramidReducer = (state: IPyramidStore = initialState, action: IGameAction): IPyramidStore => {
+
     switch (action.type) {
+
         case NEW_GAME_PYRAMID:
-            return newGamePyramid(state, action);
+            return newGamePyramid(state);
 
         case RESTART_GAME_PYRAMID:
             return restartGamePyramid(state);
@@ -35,9 +38,9 @@ const pyramidReducer = (state: IPyramidStore = initialState, action: IGameAction
 export default pyramidReducer;
 
 // generate a new deck and shuffle it, then set it as the initialDeck and the gameDeck
-const newGamePyramid = (state: IPyramidStore, { payload }: IGameAction): IPyramidStore => ({
+const newGamePyramid = (state: IPyramidStore): IPyramidStore => ({
     ...state,
-    initialDeck: payload
+    initialDeck: new GameDeck().generateDeck()
 });
 
 // sets the gameDeck to be the same as the initialDeck

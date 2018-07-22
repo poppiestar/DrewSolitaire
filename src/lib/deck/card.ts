@@ -6,7 +6,7 @@ export enum Suit {
     DIAMOND
 }
 
-export type Rank = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "T" | "J" | "Q" | "K";
+export type Rank = "A" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "T" | "J" | "Q" | "K";
 
 class Card {
 
@@ -29,7 +29,7 @@ class Card {
     get value(): number {
         // tslint:disable:object-literal-key-quotes object-literal-sort-keys
         const values: { [rank: string]: number } = {
-            "1": 1,
+            "A": 1,
             "2": 2,
             "3": 3,
             "4": 4,
