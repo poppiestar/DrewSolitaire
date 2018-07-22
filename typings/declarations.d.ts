@@ -1,6 +1,7 @@
 
 declare module "card-deck" {
     class Deck {
+        constructor(cards: any[]);
         addRandom: (cards: any[]) => Deck;
         addToBottom: (cards: any[]) => Deck;
         addToTop: (cards: any[]) => Deck;
